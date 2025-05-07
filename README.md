@@ -1,54 +1,56 @@
-# React + TypeScript + Vite
+# Advanced API Checkpoint
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React-based project built with TypeScript, styled-components, and Vite. It fetches and displays a list of users from an external API (`https://jsonplaceholder.typicode.com/users`) and showcases them in a styled user interface.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React**: Component-based architecture for building the UI.
+- **TypeScript**: Strongly typed code for better maintainability.
+- **Styled-Components**: CSS-in-JS for styling components.
+- **Axios**: HTTP client for fetching data from APIs.
+- **Vite**: Fast development server and build tool.
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Node.js (>= 16.x)
+- Yarn or npm
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Installation
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/ken-gomycode/advanced-backend-api-checkpoint.git
+   cd advanced-api-checkpoint
+   ```
+   
+2. Install Dependencies
+    ```bash
+    yarn install
+   ```
+   
+3. Start the server
+    ```bash
+   yarn dev
+    ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Dependencies
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- **React**: ^19.1.0
+- **React-DOM**: ^19.1.0
+- **Axios**: ^1.9.0
+- **Styled-Components**: ^6.1.17
+
+## Dev Dependencies
+
+- **TypeScript**: ~5.8.3
+- **Vite**: ^6.3.5
+- **ESLint**: ^9.25.0
+- **@vitejs/plugin-react**: ^4.4.1
+
+## API Used
+
+The project fetches user data from the JSONPlaceholder API.
+
+## License
+
+This project is private and not licensed for public use.
