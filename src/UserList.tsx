@@ -19,10 +19,13 @@ const UserList: React.FC = () => {
 
   const fetchUsers = async () => {
     try {
+      setIsLoading(true)
       const response = await axios.get<User[]>('https://jsonplaceholder.typicode.com/users');
       setListOfUser(response.data);
     } catch (error) {
       console.error('Failed to fetch users:', error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -38,6 +41,14 @@ const UserList: React.FC = () => {
     // Run the fetchUser function when the component is mounted
     fetchUsers();
   }, []);
+
+  if (isLoading) {
+    return (
+      <LoaderWrapper>
+        ...Loading Data
+      </LoaderWrapper>
+    )
+  }
 
   return (
     <Container>
@@ -75,4 +86,10 @@ const Name = styled.h3`
 
 const Info = styled.p`
   margin: 5px 0;
+`;
+
+const LoaderWrapper = styled.div`
+    height: 50vh;
+    display: grid;
+    place-items: center;s
 `;
